@@ -1,6 +1,6 @@
 # Bandas Musicales
 
-##Todo:
+## Todo:
 
 1.Comenzando a crear un nuevo proyecto con ASP.NET Core y guardandolo en una carpeta nueva para luego crear el repositorio en GitHubs.
 2.Se hace la migracion del proyecto crerado y se carga la base de datos.
