@@ -1,0 +1,42 @@
+﻿@model MusicBands.Models.MusicBand
+
+@{
+    ViewData["Title"] = "Editar Banda Musical";
+}
+
+<h2>Editar Banda Musical</h2>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
+            <input type ="hidden" asp-for="BandId"/>
+            <div class="form-group">
+                <label asp-for="BandName" class="control-label"></label>
+                <input asp-for="BandName" class="form-control" />
+                <span asp-validation-for="BandName" class="text-danger"></span>
+
+                <label asp-for="BandGenero" class="control-label"></label>
+                <input asp-for="BandGenero" class="form-control" />
+                <span asp-validation-for="BandGenero" class="text-danger"></span>
+
+                <label asp-for="CantAlbum" class="control-label"></label>
+                <input asp-for="CantAlbum" class="form-control" />
+                <span asp-validation-for="CantAlbum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <a asp-action="index" class="btn btn-warning">Regresar</a>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

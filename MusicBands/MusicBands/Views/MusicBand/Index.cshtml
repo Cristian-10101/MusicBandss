@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MusicBands.Models.MusicBand>
+
+@{
+    ViewData["Title"] = "Bandas Musicales";
+ } 
+
+<h1>Lista de Bandas Musicales</h1>
+<p>
+    <a asp-action="Create" class="btn btn-success">Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.BandName)</th>
+            <th>@Html.DisplayNameFor(model => model.BandGenero)</th>
+            <th>@Html.DisplayNameFor(model => model.CantAlbum)</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.BandName)</td>
+            <td>@Html.DisplayFor(modelItem => item.BandGenero)</td>
+            <td>@Html.DisplayFor(modelItem => item.CantAlbum)</td>
+            <td>
+                <a asp-action="Edit" class="btn btn-dark" asp-route-id="@item.BandId">Editar</a>
+                <a asp-action="Details" class="btn btn-info" asp-route-id="@item.BandId">Detalle</a>
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.BandId">Eliminar</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

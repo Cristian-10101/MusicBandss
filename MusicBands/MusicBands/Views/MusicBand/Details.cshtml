@@ -1,0 +1,45 @@
+﻿@model MusicBands.Models.MusicBand
+
+@{ 
+    ViewData["Title"] = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+
+
+    <div>
+        <h4>Bandas Musicales </h4>
+        <hr />
+        <dl class="row">
+
+            <dt class="col-sm-2">
+
+                @Html.DisplayNameFor(Model => Model.BandName)
+
+
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(Model => Model.BandName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(Model => Model.BandGenero)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(Model => Model.BandGenero)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(Model => Model.CantAlbum)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(Model => Model.CantAlbum)
+            </dd>
+
+        </dl>
+    </div>
+
+
+<div>
+    <a asp-action="Edit" class="btn btn-dark" asp-route-id="@Model.BandId">Editar</a>
+    <a asp-action="Index" class="btn btn-warning">Volver</a>
+</div>
